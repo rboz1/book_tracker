@@ -7,43 +7,43 @@ class Book {
 
     }
 
-    get title(){
-        return this.title;
-    }
+    // get title(){
+    //     return this.title;
+    // }
 
-    set title(val){
-        if(val === ''){
-            return this.title = 'Unknown';
-        }else{
-            return val;
-        }
-    }
+    // set title(val){
+    //     if(val === ''){
+    //         return this.title = 'Unknown';
+    //     }else{
+    //         return val;
+    //     }
+    // }
 
-    get author(){
-        return this.author;
-    }
+    // get author(){
+    //     return this.author;
+    // }
 
-    set author(val){
-        if(val === ''){
-            return this.author = 'Unknown';
-        }else{
-            return val;
-        }
-    }
+    // set author(val){
+    //     if(val === ''){
+    //         return this.author = 'Unknown';
+    //     }else{
+    //         return val;
+    //     }
+    // }
 
-    get pages(){
-        return this.pages;
-    }
+    // get pages(){
+    //     return this.pages;
+    // }
 
-    set pages(val){
-        if(val === ''){
-            return this.pages = 'Unknown';
-        }else if(typeof(val) != Number){
-            alert("Please enter a number.")
-        }else{
-            return val;
-        }
-    }
+    // set pages(val){
+    //     if(val === ''){
+    //         return this.pages = 'Unknown';
+    //     }else if(isNaN(val) && val !== ''){
+    //         return alert("Please enter a number.");
+    //     }else{
+    //         return val;
+    //     }
+    // }
     
 }
 
