@@ -1,18 +1,22 @@
 class Book {
     constructor(title, author, pages){
-        this.id = Math.floor(Math.random()*10);
-        this.title = title;
-        this.author = author;
-        this.pages = pages;
-
+      this.id = this.generateId();
+      this.title = title;
+      this.author = author;
+      this.pages = pages;
     }
 
-    get id() {
-        return this._id;
+    get bookId() {
+        return this.id;
       }
     
-    set id(value) {
-      return this._id = value;
+    set bookId(value) {
+      return this.id = value;
+    }
+
+    //generates unique id for each instance of Book
+    generateId = () => {
+      return Math.floor(Math.random() * 1000);
     }
 
     // get title(){
