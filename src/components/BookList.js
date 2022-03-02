@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 
 class BookList extends Component {
 
-    handleEdit = (e) => {
-        this.props.edit(e);
-    }
-
     handleDelete = (e) => {
         this.props.deleteBook(e);
     }
@@ -15,8 +11,8 @@ class BookList extends Component {
             <React.Fragment key = {book.id}>
                 
                 <li>
-                    <div onClick = {() => this.handleEdit(book.id)}>{book.title}</div>
-                    <button type = 'button' onClick = {() => this.handleDelete(book.id)}>DELETE</button>
+                <div id = {book.id} >{book.title}</div>
+                <button type = 'button' onClick = {() => this.handleDelete(book.id)}>DELETE</button>
                 </li>
             </React.Fragment>
             )

@@ -4,7 +4,6 @@ import Header from './components/Header';
 import BookList from './components/BookList';
 import AddButton from './components/AddButton';
 import CreatePopUp from './components/CreatePopUp';
-import EditPopUp from './components/EditPopUp';
 import Book from './components/Book';
 
 
@@ -16,6 +15,7 @@ class App extends Component {
     this.state = {
       popup: false,
       edit: false,
+      id: '',
       title: '',
       author: '',
       pages: '',
@@ -24,18 +24,13 @@ class App extends Component {
   }
 
   //toggles popup window to add new book
-  togglePopUp = () => {
-    this.setState({popup: true, edit: false})
+  togglePopUp = () => {  
+    this.setState({popup: true})
   }
 
-  //closes popup window to add new book
+  //closes popup window to add new book or edit book
   closePopUp = () => {
-    this.setState({popup: false, edit: false})
-  }
-
-  //toggles edit popup window to edit book information
-  toggleEdit = () => {
-    this.setState({popup: false, edit: true})
+    this.setState({popup: false})
   }
 
   //onChange event handlers track user form input and save to state
@@ -45,10 +40,9 @@ class App extends Component {
 
   //remove deleted book from state and local storage by accessing book object's id
   onDelete = (e) => {
-    let filtered = this.state.books.filter((item) => {return e !== item.id});
+    let filtered = this.state.books.filter((book) => {return e !== book.id});
     this.setState({books: filtered}, () => {this.storeBook(this.state.books)});
   }
-
   //adds new book to book array in state
   addBook = () => {
     //get book fields that user input
@@ -85,19 +79,13 @@ class App extends Component {
     }
   }
 
-  editTitle = (e) => {
-    console.log(e)
-
-  }
-
   render() {
     return (
       <div>
         <Header />
         <AddButton popup = {this.togglePopUp}/>
-        <BookList books = {this.state.books} deleteBook = {this.onDelete} edit = {this.toggleEdit} editTitle = {this.editTitle}/>
-        {this.state.popup ? <CreatePopUp closePop = {this.closePopUp} addBook = {this.addBook} onChangeTitle = {this.onChangeTitle} onChangeId = {this.onChangeId} {...this.state} /> 
-        :this.state.edit ? <EditPopUp closePop = {this.closePopUp} {...this.state}/> : null}
+        <BookList books = {this.state.books} deleteBook = {this.onDelete}/>
+        {this.state.popup ? <CreatePopUp closePop = {this.closePopUp} addBook = {this.addBook} onChangeTitle = {this.onChangeTitle} onChangeId = {this.onChangeId} {...this.state}/> : null}
       </div>
     );
   }
