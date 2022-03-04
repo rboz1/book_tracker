@@ -1,4 +1,20 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+const PopUp = styled.body`
+    width: 100vw;
+    height: 100vh;
+    background-color: grey;
+    opacity: 0.5;
+    position: absolute;
+    text-align: center;
+    top: 5px;
+`
+
+const Form = styled.form`
+    z-index: 10;
+
+`
 
 class CreatePopUp extends Component {
 
@@ -15,17 +31,25 @@ class CreatePopUp extends Component {
         this.props.onChangeTitle(e.target.value);
     }
 
+    handleAuthorChange = (e) => {
+        this.props.onChangeAuthor(e.target.value);
+    }
+
+    handlePagesChange = (e) => {
+        this.props.onChangePages(e.target.value);
+    }
+
     render() {
         return (
-            <div>
+            <PopUp>
                 <button onClick = {this.handleClick}>X</button>
-                <form onSubmit = {this.handleSubmit} >
+                <Form onSubmit = {this.handleSubmit} >
                     <input name = 'title' value = {this.props.title} onChange = {this.handleTitleChange} type="text" placeholder='title'/>
-                    {/* <input value = {this.props.author} onChange = {this.handleAuthorChange} type="text" placeholder='author'/>
-                    <input value = {this.props.pages} onChange = {this.handlePagesChange} type="number" min= '0' placeholder='pages'/> */}
+                    <input value = {this.props.author} onChange = {this.handleAuthorChange} type="text" placeholder='author'/>
+                    <input value = {this.props.pages} onChange = {this.handlePagesChange} type="number" min= '0' placeholder='pages'/>
                     <button type = 'submit'>Add Book</button>
-                </form>
-            </div>
+                </Form>
+            </PopUp>
         );
     }
 }

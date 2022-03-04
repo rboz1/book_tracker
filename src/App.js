@@ -6,7 +6,6 @@ import AddButton from './components/AddButton';
 import CreatePopUp from './components/CreatePopUp';
 import Book from './components/Book';
 
-
 class App extends Component {
 
   constructor(props){
@@ -36,6 +35,14 @@ class App extends Component {
   //onChange event handlers track user form input and save to state
   onChangeTitle = (e) => {
     this.setState({title: e});
+  }
+
+  onChangeAuthor = (e) => {
+    this.setState({author: e});
+  }
+
+  onChangePages = (e) => {
+    this.setState({pages: e});
   }
 
   //remove deleted book from state and local storage by accessing book object's id
@@ -81,12 +88,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Header />
         <AddButton popup = {this.togglePopUp}/>
         <BookList books = {this.state.books} deleteBook = {this.onDelete}/>
-        {this.state.popup ? <CreatePopUp closePop = {this.closePopUp} addBook = {this.addBook} onChangeTitle = {this.onChangeTitle} onChangeId = {this.onChangeId} {...this.state}/> : null}
-      </div>
+        {this.state.popup ? <CreatePopUp closePop = {this.closePopUp} addBook = {this.addBook} onChangeTitle = {this.onChangeTitle} onChangeAuthor = {this.onChangeAuthor} onChangePages = {this.onChangePages}  {...this.state}/> : null}
+      </React.Fragment>
     );
   }
 }

@@ -1,4 +1,34 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+const List = styled.li`
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+
+    display: flex;
+    justify-content: center;
+`
+const Book = styled.ul`
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: hsl(235, 19%, 35%);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
+    font-size: 1rem;
+    font-weight: 400;
+    box-shadow: 0 1px 5px hsl(236, 9%, 61%);;
+    border-radius: 5px;
+    word-wrap: break-word;
+    line-height: 200%;
+`
+
 
 class BookList extends Component {
 
@@ -8,16 +38,17 @@ class BookList extends Component {
 
     render() {
         let bookList = this.props.books.map((book) =>
-            <React.Fragment key = {book.id}>
-                
-                <li>
-                <div id = {book.id} >{book.title}</div>
-                <button type = 'button' onClick = {() => this.handleDelete(book.id)}>DELETE</button>
-                </li>
-            </React.Fragment>
+            <List key = {book.id}>
+                <Book id = {book.id}>
+                    <li>{book.title}</li>
+                    <li>{book.author}</li>
+                    <li>{book.pages}</li>
+                    <li><button type = 'button' onClick = {() => this.handleDelete(book.id)}>DELETE</button></li>
+                </Book>
+            </List>
             )
         return (
-            <ul>{bookList}</ul>
+            <main>{bookList}</main>
         );
     }
 }
