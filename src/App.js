@@ -2,7 +2,6 @@ import './App.css';
 import React, { Component } from 'react';
 import Header from './components/Header';
 import BookList from './components/BookList';
-import AddButton from './components/AddButton';
 import CreatePopUp from './components/CreatePopUp';
 import Book from './components/Book';
 
@@ -38,7 +37,9 @@ class App extends Component {
   }
 
   onChangeAuthor = (e) => {
+
     this.setState({author: e});
+
   }
 
   onChangePages = (e) => {
@@ -89,8 +90,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
-        <AddButton popup = {this.togglePopUp}/>
+        <Header popup = {this.togglePopUp}/>
         <BookList books = {this.state.books} deleteBook = {this.onDelete}/>
         {this.state.popup ? <CreatePopUp closePop = {this.closePopUp} addBook = {this.addBook} onChangeTitle = {this.onChangeTitle} onChangeAuthor = {this.onChangeAuthor} onChangePages = {this.onChangePages}  {...this.state}/> : null}
       </React.Fragment>

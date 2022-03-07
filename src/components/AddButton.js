@@ -1,23 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
 
-const Button = styled.button`
-    font-size: 1.5rem;
-    background-color: #20c1bf;
-    border-radius: 50%;
-    border: 1px solid #20c1bf;
-    color: black;
-
-    &:active{
-        background-color: #a7cae3;
-        border: 1px solid #a7cae3;
-    }
+const CustomButton = styled(Button)`
+    font-size: 200%;
+    border-radius: 50%
 `
+
 
 const AddButton = (props) => {
     return (
         <React.Fragment>
-            <Button id = 'addButton' type = 'button' onClick = {props.popup}>+</Button>
+            <CustomButton size = 'small' color = 'secondary' variant = 'contained' id = 'addButton' onClick = {props.popup}>+</CustomButton>
         </React.Fragment>
     );
 };

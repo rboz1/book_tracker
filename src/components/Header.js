@@ -1,17 +1,29 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react';
+import AddButton from './AddButton';
+import styled from '@emotion/styled';
 
 
 const Title = styled.h1`
-    background-color: #2e3e61;
+    border-bottom: 5px solid #140516;
+    border-left: 5px solid #140516;
     color: black;
     padding: 2%;
 `
 
-const Header = () => {
-    return (
-        <Title>Books To Read</Title>
-    );
+class Header extends Component{
+
+    render(){
+        return (
+            <header>
+                <Title>Books To Read</Title>
+                <AddButton popup = {this.props.popup}/>
+            </header>
+            
+        );
+
+
+    }
+
 };
 
 export default Header;
