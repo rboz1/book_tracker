@@ -4,7 +4,12 @@ import { styled } from '@mui/material/styles';
 
 const CustomButton = styled(Button)`
     font-size: 200%;
-    border-radius: 50%
+    border-radius: 50%;
+    margin: 0 2% 2% 0;
+
+    justify-self: end;
+    align-self: center;
+
 `
 
 
