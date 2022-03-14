@@ -24,7 +24,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://rboz1.github.io/portfolio_site/">
+  <a href="https://rboz1.github.io/book_tracker/">
     <img src="public/favicon.ico" alt="Logo" width="80" height="80">
   </a>
 
@@ -171,4 +171,3 @@ Project Link: [https://rboz1.github.io/book_tracker/](https://rboz1.github.io/bo
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: www.linkedin.com/in/rachel-bozadjian-203999109
-[product-screenshot]: images/screenshot_ghibli.jpg
