@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/book_tracker/static/css/main.31d6cfe0.css",
+    "main.js": "/book_tracker/static/js/main.1546bf3e.js",
+    "index.html": "/book_tracker/index.html",
+    "main.1546bf3e.js.map": "/book_tracker/static/js/main.1546bf3e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.1546bf3e.js"
+  ]
+}
