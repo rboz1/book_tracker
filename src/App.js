@@ -4,6 +4,8 @@ import Header from './components/Header';
 import BookList from './components/BookList';
 import CreatePopUp from './components/CreatePopUp';
 import Book from './components/Book';
+import Layout from './components/Layout';
+
 
 class App extends Component {
 
@@ -89,11 +91,11 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
+      <Layout>
         <Header popup = {this.togglePopUp}/>
         <BookList books = {this.state.books} deleteBook = {this.onDelete}/>
         {this.state.popup ? <CreatePopUp closePop = {this.closePopUp} addBook = {this.addBook} onChangeTitle = {this.onChangeTitle} onChangeAuthor = {this.onChangeAuthor} onChangePages = {this.onChangePages}  {...this.state}/> : null}
-      </React.Fragment>
+      </Layout>
     );
   }
 }

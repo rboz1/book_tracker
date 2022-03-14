@@ -7,6 +7,7 @@ const PopUpContainer = styled.div`
     display: flex;
     justify-content: center;
 `
+
 const PopUp = styled.body`
     display: flex;
     flex-direction: row;
