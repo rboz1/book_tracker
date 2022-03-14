@@ -65,7 +65,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<!--[![Product Name Screen Shot][product-screenshot]](https://rboz1.github.io/book_tracker/)-->
+[![Product Name Screen Shot][product-screenshot]](https://rboz1.github.io/book_tracker/)
 
 Definitely still a work in progress! I learned a ton on this project: honing my **React** skills and understanding the best way to separate out my components, utilizing local storage, and experimenting with **CSS-in-JS**. I actually really like **CSS-in-JS** solutions, surprisingly. I thought they'd clutter up each component, but it actually makes it really easy to keep track of which styles are applied to which components or HTML elements. I really liked **styled-components** but I was having a tough time getting it to work with **Material UI**, so I went with **Emotion**.
 
@@ -171,3 +171,4 @@ Project Link: [https://rboz1.github.io/book_tracker/](https://rboz1.github.io/bo
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: www.linkedin.com/in/rachel-bozadjian-203999109
+[product-screenshot]: images/screenshot.jpg
